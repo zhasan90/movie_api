@@ -3,10 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Movie Flix</title>
+
+    <style>
+      table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+  
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+    }
+    </style>
 </head>
+
 <body>
-    <header>Movie Flix</header>
-    
+    <header></header>
+
+    <h2>Documentation</h2>
+
+    <table>
+        <tr>
+          <th>Request<th>
+          <th>URL endpoint</th>
+          <th>HTTP Method</th>
+          <th>Request body data format</th>
+          <th>Response body data format</th>
+        </tr>
+        <tr>
+          <td>Return a list of ALL movies to the user</td>
+          <td></td>
+          <td>/movies</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>A Json object holding data about all movies</td>
+        </tr>
+        <tr>
+          <td>Return data (description, genre, director, image URL, whether it’s featured or not) about a single movie by title to the user</td>
+          <td></td>
+          <td>/movies/:title</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>A JSON object holding data about a single movie, containing a title, genre, director name and director bio.</td>
+        </tr>
+        <tr>
+          <td>Return data about a genre (description) by name/title (e.g., “Thriller”);</td>
+          <td></td>
+          <td>/movies/genre/:genreName</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>A JSON object holding data about a genre with a description of the genre</td>
+        </tr>
+        <tr>
+          <td>Return data about a director (bio, birth year, death year) by name;</td>
+          <td></td>
+          <td>/movies/director/:directorName</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>JSON object holding data about a director and their bio</td>
+        </tr>
+        <tr>
+          <td>Allow new users to register</td>
+          <td></td>
+          <td>/users</td>
+          <td>POST</td>
+          <td>A JSON object holding data about user to add: 
+            <p>{<br>
+              "name": "Mary",
+              "favoriteMovies":[]
+          },</p> 
+          </td>
+          <td>A JSON object holding data about new user added:
+            <p>{<br>
+                "name": "Mary",
+                "favoriteMovies": [],
+                "id": "cc0a8f0b-9dee-4f51-a92d-3282f6b4f4d4"
+            }
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Allow users to update their user info (username)</td>
+          <td></td>
+          <td>/users/:id</td>
+          <td>PUT</td>
+          <td>None</td>
+          <td>A text message indicating updated name</td>
+        </tr>
+        <tr>
+          <td>Allow users to add a movie to their list of favorites</td>
+          <td></td>
+          <td>/users/:id/:movieTitle</td>
+          <td>POST</td>
+          <td>None</td>
+          <td>A text message indicating movie was added</td>
+        </tr>
+        <tr>
+          <td>Allow users to delete a movie to their list of favorites</td>
+          <td></td>
+          <td>/users/:id/:movieTitle</td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>A text message indicating movie was deleted</td>
+        </tr>
+        <tr>
+          <td>Allow an existing user to deregister</td>
+          <td></td>
+          <td>/users/:id</td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>A text message indicating user was deleted</td>
+        </tr>
+    </table>
 </body>
 </html>

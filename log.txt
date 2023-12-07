@@ -1,74 +1,24 @@
-ECHO is on.
-URL: /
-Timestamp: Mon Nov 13 2023 11:22:22 GMT-0700 (Mountain Standard Time)
-
-URL: /favicon.ico
-Timestamp: Mon Nov 13 2023 11:22:22 GMT-0700 (Mountain Standard Time)
-
-URL: /documentation
-Timestamp: Mon Nov 13 2023 11:22:48 GMT-0700 (Mountain Standard Time)
-
-URL: /favicon.ico
-Timestamp: Mon Nov 13 2023 11:22:48 GMT-0700 (Mountain Standard Time)
-
-URL: /documentation
-Timestamp: Mon Nov 13 2023 11:23:31 GMT-0700 (Mountain Standard Time)
-
-URL: /favicon.ico
-Timestamp: Mon Nov 13 2023 11:23:31 GMT-0700 (Mountain Standard Time)
-
-URL: /documentation
-Timestamp: Mon Nov 13 2023 11:23:32 GMT-0700 (Mountain Standard Time)
-
-URL: /favicon.ico
-Timestamp: Mon Nov 13 2023 11:23:32 GMT-0700 (Mountain Standard Time)
-
-URL: /documentation
-Timestamp: Mon Nov 13 2023 11:23:34 GMT-0700 (Mountain Standard Time)
-
-URL: /favicon.ico
-Timestamp: Mon Nov 13 2023 11:23:34 GMT-0700 (Mountain Standard Time)
-
-URL: /asdafasdfasd
-Timestamp: Mon Nov 13 2023 11:24:21 GMT-0700 (Mountain Standard Time)
-
-URL: /favicon.ico
-Timestamp: Mon Nov 13 2023 11:24:21 GMT-0700 (Mountain Standard Time)
-
-URL: /index
-Timestamp: Mon Nov 13 2023 11:24:35 GMT-0700 (Mountain Standard Time)
-
-URL: /favicon.ico
-Timestamp: Mon Nov 13 2023 11:24:35 GMT-0700 (Mountain Standard Time)
-
-URL: /documentation
-Timestamp: Mon Nov 13 2023 11:24:47 GMT-0700 (Mountain Standard Time)
-
-URL: /favicon.ico
-Timestamp: Mon Nov 13 2023 11:24:47 GMT-0700 (Mountain Standard Time)
-
-URL: /documentation
-Timestamp: Mon Nov 13 2023 11:26:11 GMT-0700 (Mountain Standard Time)
-
-URL: /favicon.ico
-Timestamp: Mon Nov 13 2023 11:26:11 GMT-0700 (Mountain Standard Time)
-
-URL: /index
-Timestamp: Mon Nov 13 2023 11:26:15 GMT-0700 (Mountain Standard Time)
-
-URL: /favicon.ico
-Timestamp: Mon Nov 13 2023 11:26:15 GMT-0700 (Mountain Standard Time)
-
-URL: /index
-Timestamp: Mon Nov 13 2023 11:26:30 GMT-0700 (Mountain Standard Time)
-
-URL: /favicon.ico
-Timestamp: Mon Nov 13 2023 11:26:30 GMT-0700 (Mountain Standard Time)
-
-::1 - - [22/Nov/2023:22:52:06 +0000] "GET /documentation.html HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-::1 - - [22/Nov/2023:22:52:28 +0000] "GET /documentation.html HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-::1 - - [22/Nov/2023:22:52:33 +0000] "GET /movies HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-::1 - - [22/Nov/2023:22:53:43 +0000] "GET /movies HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-::1 - - [22/Nov/2023:22:53:51 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-::1 - - [22/Nov/2023:22:53:54 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-::1 - - [22/Nov/2023:22:54:10 +0000] "GET /movies HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:01:18:39 +0000] "GET /documentation.html HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:01:18:55 +0000] "GET /documentation.html HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:01:22:18 +0000] "GET /movies HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:01:22:19 +0000] "GET /movies HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:01:22:30 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:01:22:41 +0000] "GET /documentation.html HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:01:24:56 +0000] "GET /documentation.html HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:01:25:03 +0000] "GET /movies HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:01:25:04 +0000] "GET /movies HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:01:25:22 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:01:28:20 +0000] "GET /documentation HTTP/1.1" 404 152 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:01:28:35 +0000] "GET /documentation.html HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [01/Dec/2023:04:09:03 +0000] "GET /movies/good%20will%20hunting HTTP/1.1" 404 167 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [01/Dec/2023:04:09:36 +0000] "GET /movies/savingprivateryan HTTP/1.1" 404 163 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [01/Dec/2023:04:10:03 +0000] "GET /movies/good%20will%20hunting HTTP/1.1" 404 167 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [01/Dec/2023:04:10:22 +0000] "GET /movies/Good%20Will%20Hunting HTTP/1.1" 404 167 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [01/Dec/2023:04:11:43 +0000] "GET /movies/Good%20Will%20Hunting HTTP/1.1" 404 167 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [01/Dec/2023:04:11:49 +0000] "GET /movies/Good%20Will%20Hunting HTTP/1.1" 404 167 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [01/Dec/2023:04:12:09 +0000] "GET /movies/Good%20Will%20Hunting HTTP/1.1" 404 167 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [01/Dec/2023:04:13:32 +0000] "GET /movies/Good%20Will%20Hunting HTTP/1.1" 404 167 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [01/Dec/2023:04:13:36 +0000] "GET /movies/Good%20Will%20Hunting HTTP/1.1" 404 167 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [01/Dec/2023:04:14:26 +0000] "GET /movies/Good%20Will%20Hunting HTTP/1.1" 404 167 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [01/Dec/2023:04:14:26 +0000] "GET /movies/Good%20Will%20Hunting HTTP/1.1" 404 167 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [01/Dec/2023:04:14:26 +0000] "GET /movies/Good%20Will%20Hunting HTTP/1.1" 404 167 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
