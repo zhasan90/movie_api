@@ -272,7 +272,7 @@ app.delete('/users/:Username/movies/:MovieID', async (req, res) => {
 app.delete("/users/:id" , (req , res) =>{
     const {id} = req.params;
 
-    let user = Users.findByIdAndRemove({"_id" : id }); //two equal signs because the id is a number
+    let user = Users.findOneAndDelete({Username : id }); //two equal signs because the id is a number
 
     if(user){
         res.status(200).send(`user ${id} has been removed`);
