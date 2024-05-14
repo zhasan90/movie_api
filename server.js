@@ -206,7 +206,7 @@ app.post("/users" , (req , res) =>{
 // })
 
 app.put('/users/:Username', async (req, res) => {
-    await Users.findOneAndUpdate({ Username: req.params.Username.id }, { $set:
+    await Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
       {
         Username: req.body.Username,
         Password: req.body.Password,
@@ -271,10 +271,9 @@ app.delete("/users/:id/:movieTitle" , (req , res) =>{
 app.delete("/users/:id" , (req , res) =>{
     const {id} = req.params;
 
-    let user = users.find(user => user.id == id); //two equal signs because the id is a number
+    let user = Users.findByIdAndRemove({"_id" : id }); //two equal signs because the id is a number
 
     if(user){
-        users = users.filter(user => user.id !==id);
         res.status(200).send(`user ${id} has been removed`);
     }else{
         res.status(400).send("no such user");
