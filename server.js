@@ -177,12 +177,13 @@ app.use(bodyParser.json());
 
 
 //CREATE
+//GET Users
 app.post("/users" , (req , res) =>{
     const newUser = req.body;
 
-    if(newUser.name) {
+    if(newUser.Username) {
         newUser.id = uuid.v4();
-        users.push(newUser);
+        Users.create(newUser);
         res.status(201).json(newUser);
     }else{
         res.status(400).send("users need name")
@@ -190,33 +191,67 @@ app.post("/users" , (req , res) =>{
 })
 
 //UPDATE
-app.put("/users/:id" , (req , res) =>{
-    const {id} = req.params;
-    const updatedUser = req.body;
+// app.put("/users/:id" , (req , res) =>{
+//     const {id} = req.params;
+//     const updatedUser = req.body;
 
-    let user = users.find(user => user.id == id); //two equal signs because the id is a number
+//     let user = users.find(user => user.id == id); //two equal signs because the id is a number
 
-    if(user){
-        user.name = updatedUser.name;
-        res.status(200).send(`user ${id}'s name has been updated`);
-    }else{
-        res.status(400).send("no such user");
-    }
-})
+//     if(user){
+//         user.name = updatedUser.name;
+//         res.status(200).send(`user ${id}'s name has been updated`);
+//     }else{
+//         res.status(400).send("no such user");
+//     }
+// })
+
+app.put('/users/:Username', async (req, res) => {
+    await Users.findOneAndUpdate({ Username: req.params.Username.id }, { $set:
+      {
+        Username: req.body.Username,
+        Password: req.body.Password,
+        Email: req.body.Email,
+        Birthday: req.body.Birthday
+      }
+    },
+    { new: true }) // This line makes sure that the updated document is returned
+    .then((updatedUser) => {
+      res.json(updatedUser);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    })
+  
+  });
 
 //CREATE
-app.post("/users/:id/:movieTitle" , (req , res) =>{
-    const {id, movieTitle} = req.params;
+// app.post("/users/:id/:movieTitle" , (req , res) =>{
+//     const {id, movieTitle} = req.params;
 
-    let user = users.find(user => user.id == id); //two equal signs because the id is a number
+//     let user = users.find(user => user.id == id); //two equal signs because the id is a number
 
-    if(user){
-        user.favMovies.push(movieTitle);
-        res.status(200).send(`${movieTitle} has been added to user ${id}'s array`);
-    }else{
-        res.status(400).send("no such user");
-    }
-})
+//     if(user){
+//         user.favMovies.push(movieTitle);
+//         res.status(200).send(`${movieTitle} has been added to user ${id}'s array`);
+//     }else{
+//         res.status(400).send("no such user");
+//     }
+// })
+
+app.post('/users/:Username/movies/:MovieID', async (req, res) => {
+    await Users.findOneAndUpdate({ Username: req.params.Username }, {
+       $push: { FavoriteMovies: req.params.MovieID }
+     },
+     { new: true }) // This line makes sure that the updated document is returned
+    .then((updatedUser) => {
+      res.json(updatedUser);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+  });
 
 //DELETE
 app.delete("/users/:id/:movieTitle" , (req , res) =>{
@@ -295,33 +330,6 @@ app.get("/movies/genre/:genreName" , (req , res) =>{
         res.status(500).send('Error: ' + err);
         });
 })
-
-//READ directors 
-// app.get("/director" , (req , res) =>{
-//         Director.find()
-//         .then((director) => {
-//         res.status(200).json(director);
-//         })
-//         .catch((err) => {
-//             console.error(err);
-//             res.status(500).send('Error: ' + err);
-//             });
-//     })
-//     const {director} = req.params; //object destructuring: creating a new variable, title (LH), which is equal to the property of the same name of the object on the RHS of = sign 
-    
-//     Movies.findOne({"Director": director})
-//     .then((director) => {
-//         if (director){
-//             res.status(200).json(director); //to shut down function add return before res.status
-//         }else {
-//             res.status(400).send("no such list")
-//         }
-//     })
-//     .catch((err) => {
-//         console.error(err);
-//         res.status(500).send('Error: ' + err);
-//         });
-// })
 
 
 //READ

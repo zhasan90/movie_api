@@ -11,15 +11,15 @@ let movieSchema = mongoose.Schema({
         Name: String,
         Bio: String,
     },
-        Actors: [String],
-    ImagePath: String,
-    Featured: Boolean,
+    Actors: [String],
+        ImagePath: String,
+        Featured: Boolean,
 });
 
-let directorSchema = mongoose.Schema ({
-    Name: { type: String, required: true },
-    Bio: { type: String, required: true },
-});
+// let directorSchema = mongoose.Schema ({
+//     Name: { type: String, required: true },
+//     Bio: { type: String, required: true },
+// });
 
 
 let userSchema = mongoose.Schema({
@@ -32,8 +32,8 @@ let userSchema = mongoose.Schema({
 
 let Movie = mongoose.model("Movie", movieSchema);
 let User = mongoose.model("User", userSchema);
-let Director = mongoose.model("Director" , directorSchema);
+// let Director = mongoose.model("Director" , directorSchema);
 
 module.exports.Movie = Movie;
 module.exports.User = User;
-module.exports.Director = Director;
+// module.exports.Director = Director;
