@@ -281,6 +281,10 @@ app.delete("/users/:id" , (req , res) =>{
     }
 })
 
+app.get("/" , (req , res) => {
+  res.send("Welcome to Movie Flix");
+})
+
 //READ 
 app.get("/movies" , (req , res) =>{
     Movies.find()
@@ -364,6 +368,7 @@ app.get("/users" , (req , res) =>{
 
 //Serving public folder
 app.use(express.static("public"));
+app.use(express.static("index"));
 
 
 app.listen(8080 , () => console.log("Listening on 8080"))
