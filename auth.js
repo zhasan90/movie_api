@@ -1,4 +1,4 @@
-const jwtSecret = "your_swt_secret ";
+const jwtSecret = "your_jwt_secret";
 
 
 const jwt = require( "jsonwebtoken" );
