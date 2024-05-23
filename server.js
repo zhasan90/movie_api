@@ -245,7 +245,7 @@ app.put('/users/:Username', passport.authenticate("jwt" , {session: false}), asy
 //     }
 // })
 
-app.post('/users/:Username/movies/:MovieID', async (req, res) => {
+app.post('/users/:Username/movies/:MovieID', passport.authenticate("jwt" , {session: false}), async (req, res) => {
     await Users.findOneAndUpdate({ Username: req.params.Username }, {
        $push: { FavoriteMovies: req.params.MovieID }
      },
@@ -260,7 +260,7 @@ app.post('/users/:Username/movies/:MovieID', async (req, res) => {
   });
 
 //DELETE
-app.delete('/users/:Username/movies/:MovieID', async (req, res) => {
+app.delete('/users/:Username/movies/:MovieID', passport.authenticate("jwt" , {session: false}), async (req, res) => {
     await Users.findOneAndUpdate({ Username: req.params.Username }, {
        $pull: { FavoriteMovies: req.params.MovieID }
      },
@@ -275,7 +275,7 @@ app.delete('/users/:Username/movies/:MovieID', async (req, res) => {
   });
 
 //DELETE
-app.delete("/users/:userID" , async (req , res) =>{
+app.delete("/users/:userID" , passport.authenticate("jwt" , {session: false}), async (req , res) =>{
     // const {id} = req.params;
 
     // let user = Users.findOneAndDelete({Username : id }); //two equal signs because the id is a number
