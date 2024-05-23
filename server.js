@@ -15,6 +15,10 @@ const Users = Models.User;
 
 app.use(bodyParser.json());
 
+const auth = require ("./auth")(app);
+const passport = require ("passport");
+require("./passport");
+
 // let users = [
 //     {
 //         id: 1, 
@@ -177,7 +181,6 @@ app.use(bodyParser.json());
 
 
 //CREATE
-//GET Users
 app.post("/users" , (req , res) =>{
     const newUser = req.body;
 
@@ -205,7 +208,10 @@ app.post("/users" , (req , res) =>{
 //     }
 // })
 
-app.put('/users/:Username', async (req, res) => {
+app.put('/users/:Username', passport.authenticate("jwt" , {session: false}), async (req, res) => {
+    if(req.user.Username !== req.params.Username){
+      return res.status(400).send("Permission denied");
+    }
     await Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
       {
         Username: req.body.Username,
@@ -269,7 +275,7 @@ app.delete('/users/:Username/movies/:MovieID', async (req, res) => {
   });
 
 //DELETE
-app.delete("/users/:Username" , async (req , res) =>{
+app.delete("/users/:userID" , async (req , res) =>{
     // const {id} = req.params;
 
     // let user = Users.findOneAndDelete({Username : id }); //two equal signs because the id is a number
@@ -279,12 +285,12 @@ app.delete("/users/:Username" , async (req , res) =>{
     // }else{
     //     res.status(400).send("no such user");
     // }
-    await Users.findOneAndUpdate({ Username: req.params.Username })
+    await Users.findByIdAndDelete({ _id: req.params.userID })
     .then((user) => {
       if (!user) {
-        res.status(400).send(req.params.Username + ' was not found');
+        res.status(400).send(req.params.userID + ' was not found');
       } else {
-        res.status(200).send(req.params.Username + ' was deleted.');
+        res.status(200).send(req.params.userID + ' was deleted.');
       }
     })
     .catch((err) => {
@@ -298,8 +304,8 @@ app.get("/" , (req , res) => {
 })
 
 //READ 
-app.get("/movies" , (req , res) =>{
-    Movies.find()
+app.get("/movies" , passport.authenticate("jwt" , {session: false}) , async (req , res) =>{
+    await Movies.find()
     .then((movies) => {
     res.status(200).json(movies);
     })
