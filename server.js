@@ -316,7 +316,7 @@ app.get("/movies" , passport.authenticate("jwt" , {session: false}) , async (req
 })
 
 //READ
-app.get("/movies/:title" , (req , res) =>{
+app.get("/movies/:title" , passport.authenticate("jwt" , {session: false}) , (req , res) =>{
     // const title = req.params.title;
     const {title} = req.params; //object destructuring: creating a new variable, title (LH), which is equal to the property of the same name of the object on the RHS of = sign 
     //const movie = movies.find(movie => movie.Title === title); //three equal signs because title is a string
@@ -336,7 +336,7 @@ app.get("/movies/:title" , (req , res) =>{
 })
 
 //READ
-app.get("/movies/genre/:genreName" , (req , res) =>{
+app.get("/movies/genre/:genreName" , passport.authenticate("jwt" , {session: false}) , (req , res) =>{
     const {genreName} = req.params; 
 
     Movies.findOne({"Genre.Name": genreName})
@@ -355,7 +355,7 @@ app.get("/movies/genre/:genreName" , (req , res) =>{
 
 
 //READ
-app.get("/movies/director/:directorName" , (req , res) =>{
+app.get("/movies/director/:directorName" , passport.authenticate("jwt" , {session: false}) , (req , res) =>{
     const {directorName} = req.params; //object destructuring
 
     Movies.findOne({"Director.Name": directorName})
@@ -373,7 +373,7 @@ app.get("/movies/director/:directorName" , (req , res) =>{
 })
 
 //READ
-app.get("/users" , (req , res) =>{
+app.get("/users" , passport.authenticate("jwt" , {session: false}) , (req , res) =>{
     Users.find()
     .then((users) => {
     res.status(200).json(users);
