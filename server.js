@@ -3,6 +3,9 @@ const express = require("express");
       bodyParser = require("body-parser");
       uuid = require("uuid");
       mongoose = require('mongoose');
+      cors = require("cors");
+const {check , validationResult} = require("express-validator");
+    
 
       mongoose.connect('mongodb+srv://zubairhasan90:15981@cluster0.janhy2j.mongodb.net/myFlixdb');
     //     // useNewUrlParser: true,
@@ -15,8 +18,11 @@ const Users = Models.User;
 
 app.use(bodyParser.json());
 
+app.use(cors());
+
 const auth = require ("./auth")(app);
 const passport = require ("passport");
+const { validationResult } = require("express-validator");
 require("./passport");
 
 // let users = [
@@ -181,17 +187,52 @@ require("./passport");
 
 
 //CREATE
-app.post("/users" , (req , res) =>{
-    const newUser = req.body;
+app.post("/users" ,
+ [check("Username" , "Username is required").isLength({min: 5}),
+  check("Username" , "Username contains non alphanumeric characters - not allowed").isAlphanumeric(),
+  check("Password" , "Password is required").not().isEmpty(),
+  check("Email" , "Email does not appear to be valid").isEmail()] , 
+  async (req , res) => {
+    // const newUser = req.body;
 
-    if(newUser.Username) {
-        newUser.id = uuid.v4();
-        Users.create(newUser);
-        res.status(201).json(newUser);
-    }else{
-        res.status(400).send("users need name")
+    // if(newUser.Username) {
+    //     newUser.id = uuid.v4();
+    //     Users.create(newUser);
+    //     res.status(201).json(newUser);
+    // }else{
+    //     res.status(400).send("users need name")
+    // }
+    let errors = validationResult(req);
+
+    if(!errors.isEmpty()){
+      return res.status(422).json({errors : errors.array()});
     }
-})
+    
+    let hashedPassword = Users.hashedPassword(req.body.Password);
+
+    await Users.findOne({Username : req.params.Username})
+      .then((user) => {
+        if(user) {
+          return res.status(400).send(req.body.Username + " already exists");
+        }else {
+          Users.create({
+            Username : req.body.Username,
+            Password : hashedPassword,
+            Email : req.body.Email,
+            Birthday : req.body.Birthday
+          })
+          .then((user) => {res.status(201).json(user)})
+          .catch((error) => {
+            console.error(error);
+            res.status(500).send("Error: " + error);
+          });
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).send("Error: " + error);
+      });
+});
 
 //UPDATE
 // app.put("/users/:id" , (req , res) =>{
@@ -389,4 +430,7 @@ app.use(express.static("public"));
 app.use(express.static("index"));
 
 
-app.listen(8080 , () => console.log("Listening on 8080"))
+const port = process.env.PORT;
+app.listen(port , "0.0.0.0" , () => {
+  console.console.log(("Listening to Port " + port));
+})
