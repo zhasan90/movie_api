@@ -430,7 +430,7 @@ app.use(express.static("public"));
 app.use(express.static("index"));
 
 
-const port = 3000;
+const port = process.env.PORT;
 app.listen(port , "0.0.0.0" , () => {
   console.console.log(("Listening to Port " + port));
 })
