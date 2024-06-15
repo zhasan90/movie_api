@@ -1,9 +1,22 @@
 const express = require("express");
 app = express();
+cors = require("cors");
+
+var whitelist = ['http://localhost:1234', 'https://zhasan1.github.io']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+app.use(cors(corsOptions));
+
 bodyParser = require("body-parser");
 uuid = require("uuid");
 mongoose = require('mongoose');
-cors = require("cors");
 const { check, validationResult } = require("express-validator");
 
 
@@ -18,7 +31,6 @@ const Users = Models.User;
 
 app.use(bodyParser.json());
 
-app.use(cors());
 
 const auth = require("./auth")(app);
 const passport = require("passport");
