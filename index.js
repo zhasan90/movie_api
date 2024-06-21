@@ -445,5 +445,5 @@ app.use(express.static("index"));
 
 const port = process.env.PORT || 3000;
 app.listen(port, "0.0.0.0", () => {
-  console.console.log(("Listening to Port " + port));
+  console.log(("Listening to Port " + port));
 })
