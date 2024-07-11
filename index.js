@@ -2,7 +2,7 @@ const express = require("express");
 app = express();
 cors = require("cors");
 
-var whitelist = ['http://localhost:1234', 'https://zhasan1.github.io']
+var whitelist = ['http://localhost:1234', 'https://zhasan90.github.io']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
