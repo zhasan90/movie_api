@@ -2,17 +2,17 @@ const express = require("express");
 app = express();
 cors = require("cors");
 
-var whitelist = ['http://localhost:1234', 'https://zhasan90.github.io']
-var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
-app.use(cors(corsOptions));
+// var whitelist = ['http://localhost:1234', 'https://zhasan90.github.io']
+// var corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
+app.use(cors());
 
 bodyParser = require("body-parser");
 uuid = require("uuid");
