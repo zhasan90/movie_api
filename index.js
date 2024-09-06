@@ -20,7 +20,7 @@ mongoose = require('mongoose');
 const { check, validationResult } = require("express-validator");
 
 
-mongoose.connect('mongodb+srv://zubairhasan90:15981@cluster0.janhy2j.mongodb.net/myFlixdb');
+mongoose.connect('mongodb+srv://zubairhasan90:Zubair99@cluster0.janhy2j.mongodb.net/myFlixdb');
 //     // useNewUrlParser: true,
 //     // useUnifiedTopology: true,
 //     
