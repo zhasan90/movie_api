@@ -1,33 +1,22 @@
 const express = require("express");
-app = express();
-cors = require("cors");
+const app = express();
+const cors = require("cors");
 
-// var whitelist = ['http://localhost:1234', 'https://zhasan90.github.io']
-// var corsOptions = {
-//   origin: function (origin, callback) {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Not allowed by CORS'))
-//     }
-//   }
-// }
-app.use(cors());
+
 
 bodyParser = require("body-parser");
 uuid = require("uuid");
 mongoose = require('mongoose');
-const { check, validationResult } = require("express-validator");
+
 
 
 mongoose.connect('mongodb+srv://zubairhasan90:Zubair99@cluster0.janhy2j.mongodb.net/myFlixdb');
-//     // useNewUrlParser: true,
-//     // useUnifiedTopology: true,
-//     
+app.use(cors());
+const { check, validationResult } = require("express-validator");  
 const Models = require('./models');
 const Movies = Models.Movie;
 const Users = Models.User;
-// const Director = Models.Director;  
+ 
 
 app.use(bodyParser.json());
 
