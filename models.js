@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-    bcryptjs = require("bcryptjs");
+    bcrypt = require("bcrypt");
 
 let movieSchema = mongoose.Schema({
     Title: { type: String, required: true },
@@ -16,11 +16,6 @@ let movieSchema = mongoose.Schema({
         ImagePath: String,
         Featured: Boolean,
 });
-
-// let directorSchema = mongoose.Schema ({
-//     Name: { type: String, required: true },
-//     Bio: { type: String, required: true },
-// });
 
 
 let userSchema = mongoose.Schema({
@@ -41,8 +36,6 @@ userSchema.methods.validatePassword = function(password){
 
 let Movie = mongoose.model("Movie", movieSchema);
 let User = mongoose.model("User", userSchema);
-// let Director = mongoose.model("Director" , directorSchema);
 
 module.exports.Movie = Movie;
 module.exports.User = User;
-// module.exports.Director = Director;
