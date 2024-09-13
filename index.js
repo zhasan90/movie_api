@@ -91,19 +91,6 @@ app.put('/users/:Username', passport.authenticate("jwt", { session: false }), as
 
 });
 
-//CREATE
-// app.post("/users/:id/:movieTitle" , (req , res) =>{
-//     const {id, movieTitle} = req.params;
-
-//     let user = users.find(user => user.id == id); //two equal signs because the id is a number
-
-//     if(user){
-//         user.favMovies.push(movieTitle);
-//         res.status(200).send(`${movieTitle} has been added to user ${id}'s array`);
-//     }else{
-//         res.status(400).send("no such user");
-//     }
-// })
 
 app.post('/users/:Username/movies/:MovieID', passport.authenticate("jwt", { session: false }), async (req, res) => {
   await Users.findOneAndUpdate({ Username: req.params.Username }, {
@@ -136,15 +123,6 @@ app.delete('/users/:Username/movies/:MovieID', passport.authenticate("jwt", { se
 
 //DELETE
 app.delete("/users/:userID", passport.authenticate("jwt", { session: false }), async (req, res) => {
-  // const {id} = req.params;
-
-  // let user = Users.findOneAndDelete({Username : id }); //two equal signs because the id is a number
-
-  // if(user){
-  //     res.status(200).send(`user ${id} has been removed`);
-  // }else{
-  //     res.status(400).send("no such user");
-  // }
   await Users.findByIdAndDelete({ _id: req.params.userID })
     .then((user) => {
       if (!user) {
@@ -164,7 +142,7 @@ app.get("/", (req, res) => {
 })
 
 //READ 
-app.get("/movies", passport.authenticate("jwt", { session: false }), async (req, res) => {
+app.get("/movies", async (req, res) => {
   await Movies.find()
     .then((movies) => {
       res.status(200).json(movies);

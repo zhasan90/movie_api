@@ -4,7 +4,7 @@
 29E:\fix\movie_api\package.json133707068389761057 0
 34E:\fix\movie_api\package-lock.json133707068389761057 0
 24E:\fix\movie_api\auth.js133707068389730338 0
-26E:\fix\movie_api\models.js133707068389751033 0
+26E:\fix\movie_api\models.js133707181849708047 0
 27E:\fix\movie_api\index.html133707068389740344 0
 25E:\fix\movie_api\index.js133707175151615069 0
 28E:\fix\movie_api\passport.js133707068389761057 0
