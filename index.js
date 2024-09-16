@@ -155,10 +155,7 @@ app.get("/movies", async (req, res) => {
 
 //READ
 app.get("/movies/:title", passport.authenticate("jwt", { session: false }), (req, res) => {
-  // const title = req.params.title;
   const { title } = req.params; //object destructuring: creating a new variable, title (LH), which is equal to the property of the same name of the object on the RHS of = sign 
-  //const movie = movies.find(movie => movie.Title === title); //three equal signs because title is a string
-
   Movies.findOne({ Title: title })
     .then((movie) => {
       if (movie) {
